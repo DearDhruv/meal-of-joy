@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "736228808195",
+    "firebase_url": "https://mealofjoy-production.firebaseio.com",
+    "project_id": "mealofjoy-production",
+    "storage_bucket": "mealofjoy-production.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:736228808195:android:d1945ba64ec08f6c4da036",
+        "android_client_info": {
+          "package_name": "com.mealofjoy.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "736228808195-1qrqetklqq2mid11q67a97titt4m4p15.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0MKaNUXjU2URpwdc4zH3GpgavHemW-KY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "736228808195-1qrqetklqq2mid11q67a97titt4m4p15.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

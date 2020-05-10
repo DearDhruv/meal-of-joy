@@ -34,6 +34,7 @@ class App : Application() {
         bundle.putString(FirebaseAnalytics.Param.CONTENT, "App started")
         mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle)
 
+        // throw NullPointerException("test java NullPointerException")
     }
 
     private fun notification() {
