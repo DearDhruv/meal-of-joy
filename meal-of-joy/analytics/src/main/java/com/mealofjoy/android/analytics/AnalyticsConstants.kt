@@ -11,8 +11,8 @@ package com.mealofjoy.android.analytics
 object AnalyticsConstants {
 
     // demo params
-    const val KEY_EVENT_XXX = "event_name"
-    const val KEY_PARAM_YYY = "param_name"
+    const val KEY_EVENT_APP_START = "app_start"
+    const val KEY_PARAM_START_TIME = "start_time"
 
     const val VALUE_PARAM_ZZZ = "event_value"
 

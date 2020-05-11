@@ -9,49 +9,23 @@
 package com.mealofjoy.android
 
 import android.app.Application
-import android.os.Bundle
-import android.widget.Toast
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.firebase.analytics.FirebaseAnalytics
-import com.google.firebase.iid.FirebaseInstanceId
+import com.mealofjoy.android.analytics.di.AnalyticsComponentImpl
+import com.mealofjoy.android.di.ComponentRouter
 
 class App : Application() {
 
-    private val mFirebaseAnalytics: FirebaseAnalytics by lazy {
-        FirebaseAnalytics.getInstance(this)
-    }
-
     override fun onCreate() {
         super.onCreate()
-        logAppStarted()
-        // notification()
+        createComponentRouter()
     }
 
-    private fun logAppStarted() {
-        // todo: dhruv refactor to module
-        val bundle = Bundle()
-        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, getString(R.string.app_name))
-        bundle.putString(FirebaseAnalytics.Param.CONTENT, "App started")
-        mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle)
-
-        // throw NullPointerException("test java NullPointerException")
+    private fun createComponentRouter() {
+        // initialize component router for DIY DI
+        ComponentRouter.init(this) {
+            // analytics component
+            inject("analytics", AnalyticsComponentImpl(applicationContext))
+        }
     }
 
-    private fun notification() {
-        FirebaseInstanceId.getInstance().instanceId
-            .addOnCompleteListener(OnCompleteListener { task ->
-                if (!task.isSuccessful) {
-//                    Log.w(TAG, "getInstanceId failed", task.exception)
-                    return@OnCompleteListener
-                }
-
-                // Get new Instance ID token
-                val token = task.result?.token
-
-                // Log and toast
-//                val msg = getString(R.string.msg_token_fmt, token)
-//                Log.d(TAG, msg)
-                Toast.makeText(baseContext, token, Toast.LENGTH_SHORT).show()
-            })
-    }
+    // todo: create module for notification
 }

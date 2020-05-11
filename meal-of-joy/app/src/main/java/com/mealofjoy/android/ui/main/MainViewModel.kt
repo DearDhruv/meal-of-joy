@@ -10,7 +10,15 @@
 package com.mealofjoy.android.ui.main
 
 import androidx.lifecycle.ViewModel
+import com.mealofjoy.android.analytics.DemoAnalytics
+import com.mealofjoy.android.extensions.now
 
-class MainViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+class MainViewModel private constructor(private val analytics: DemoAnalytics) : ViewModel() {
+    // TODO: dhruv create stateful model
+
+    fun logAppOpened() = analytics.successfulAppStartedOn(now)
+
+    companion object {
+        fun create(analytics: DemoAnalytics): MainViewModel = MainViewModel(analytics)
+    }
 }
