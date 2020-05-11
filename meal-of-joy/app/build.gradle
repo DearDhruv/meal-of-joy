@@ -1,21 +1,26 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.firebase.crashlytics'
-apply plugin: 'com.google.gms.google-services'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion androidbuild.compileSdkVersion
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.mealofjoy.android"
-        minSdkVersion 22
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        applicationId appInfo.applicationId
+        minSdkVersion androidbuild.minSdkVersion
+        targetSdkVersion androidbuild.targetSdkVersion
+        versionName appInfo.versionName
+        versionCode appInfo.versionCode
+
+        testInstrumentationRunner androidbuild.testInstrumentationRunner
+
+        // The following argument makes the Android Test Orchestrator run its
+        // "pm clear" command after each test invocation. This command ensures
+        // that the app's state is completely cleared between tests.
+        testInstrumentationRunnerArguments clearPackageData: 'true'
     }
 
     buildTypes {
@@ -73,6 +78,9 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
+    implementation project(':core')
+    implementation project(':analytics')
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation "androidx.constraintlayout:constraintlayout:2.0.0-beta5"
     implementation "androidx.fragment:fragment-ktx:1.2.4"
@@ -90,9 +98,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation "android.arch.lifecycle:common-java8:1.1.1"
 
-    implementation 'com.google.firebase:firebase-core:17.4.1'
-    implementation 'com.google.firebase:firebase-messaging:20.1.7'
-    implementation 'com.google.firebase:firebase-crashlytics:17.0.0'
+
 
     // Google material
     // implementation "com.google.android.material:material:1.2.0-alpha06"
@@ -111,3 +117,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
 }
+
+// ADD THIS AT THE BOTTOM
+apply plugin: 'com.google.gms.google-services'

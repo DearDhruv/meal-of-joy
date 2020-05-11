@@ -1,0 +1,55 @@
+/*
+ *  android-library.gradle
+ *  MealOfJoy
+ *  <p>
+ *  Created by Dhruv Patel on 12-05-2020.
+ *  Copyright © 2020 MealOfJoy. All rights reserved.
+ */
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion androidbuild.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion androidbuild.minSdkVersion
+        targetSdkVersion androidbuild.targetSdkVersion
+        versionCode appInfo.versionCode
+        versionName appInfo.versionName
+        testInstrumentationRunner androidbuild.testInstrumentationRunner
+    }
+
+    flavorDimensions "environment"
+    productFlavors {
+        dev {
+            dimension "environment"
+        }
+        production {
+            dimension "environment"
+        }
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+        freeCompilerArgs += "-Xjvm-default=compatibility"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
