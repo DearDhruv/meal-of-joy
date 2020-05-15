@@ -6,15 +6,17 @@
  *  Copyright © 2020 MealOfJoy. All rights reserved.
  */
 
-def appInfo = [:]
+def kotlinInfo = [:]
+kotlinInfo.kotlin_version = "1.3.72"
+ext.kotlinInfo = kotlinInfo
 
+def appInfo = [:]
 appInfo.applicationId = "com.mealofjoy.android"
 appInfo.versionCode = 1 // todo update with auto-generate build number
 appInfo.versionName = "1.0"
 ext.appInfo = appInfo
 
 def androidbuild = [:]
-
 // Android build stuff
 androidbuild.minSdkVersion = 21
 androidbuild.targetSdkVersion = 29
@@ -22,3 +24,9 @@ androidbuild.compileSdkVersion = 29
 androidbuild.testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 ext.androidbuild = androidbuild
 
+
+def networkInfo = [:]
+networkInfo.retrofit = "2.7.0"
+networkInfo.okhttp = "4.2.2"
+networkInfo.kotlinxSerialization = "0.20.0"
+ext.networkInfo = networkInfo

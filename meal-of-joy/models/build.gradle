@@ -1,0 +1,18 @@
+/*
+ *  build.gradle
+ *  MealOfJoy
+ *  <p>
+ *  Created by Dhruv Patel on 16-05-2020.
+ *  Copyright © 2020 MealOfJoy. All rights reserved.
+ */
+
+apply from: "$rootProject.projectDir/android-library.gradle"
+
+dependencies {
+    // implementation 'com.google.code.gson:gson:2.8.6'
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:$networkInfo.kotlinxSerialization"
+    implementation "androidx.annotation:annotation:1.1.0"
+
+    implementation "com.squareup.retrofit2:retrofit:$networkInfo.retrofit"
+    implementation "com.squareup.okhttp3:okhttp:$networkInfo.okhttp"
+}

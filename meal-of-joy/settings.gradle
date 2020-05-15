@@ -1,3 +1,5 @@
+include ':models'
+include ':network'
 include ':analytics'
 include ':core'
 include ':app'

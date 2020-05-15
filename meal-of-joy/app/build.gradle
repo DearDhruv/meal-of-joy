@@ -81,15 +81,12 @@ dependencies {
     implementation project(':core')
     implementation project(':analytics')
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation "androidx.constraintlayout:constraintlayout:2.0.0-beta5"
-
-
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinInfo.kotlin_version"
+    implementation "androidx.constraintlayout:constraintlayout:2.0.0-beta6"
 
     implementation "androidx.navigation:navigation-fragment-ktx:2.2.2"
     implementation "androidx.navigation:navigation-ui-ktx:2.2.2"
     // implementation "com.phelat:navigationresult:1.0.0-beta01"
-
 
 
     // Google material
