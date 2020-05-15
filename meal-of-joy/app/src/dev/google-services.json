@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "814647425560",
+    "firebase_url": "https://mealofjoy-dev.firebaseio.com",
+    "project_id": "mealofjoy-dev",
+    "storage_bucket": "mealofjoy-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:814647425560:android:3cdf2585520c9dcb76216d",
+        "android_client_info": {
+          "package_name": "com.mealofjoy.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "814647425560-b97l3fpedi5ch2vpi84n738v840f8eh5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mealofjoy.android",
+            "certificate_hash": "528dd510369035b730c484638cf353619432b138"
+          }
+        },
+        {
+          "client_id": "814647425560-9enagvm9u8eq3kb0nre71jtt5upklb18.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAjSwUT8tRzJhTqPEexXeKFLvwap1-ICk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "814647425560-9enagvm9u8eq3kb0nre71jtt5upklb18.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
