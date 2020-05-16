@@ -2,7 +2,7 @@
  *  ViewModelExtensions.kt
  *  MealOfJoy
  *  <p>
- *  Created by Dhruv Patel on 12-05-2020.
+ *  Created by Dhruv Patel on 17-05-2020.
  *  Copyright © 2020 MealOfJoy. All rights reserved.
  */
 
@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.mealofjoy.android.factory.BaseViewModelFactory
+import com.mealofjoy.android.lifecycle.BaseViewModelFactory
 
 inline fun <reified T : ViewModel> Fragment.getViewModel(noinline creator: (() -> T)? = null): T {
     return if (creator == null)

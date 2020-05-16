@@ -6,7 +6,7 @@
  *  Copyright © 2020 MealOfJoy. All rights reserved.
  */
 
-package com.mealofjoy.android.factory
+package com.mealofjoy.android.lifecycle
 
 
 import androidx.lifecycle.ViewModel

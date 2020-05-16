@@ -11,7 +11,7 @@ package com.mealofjoy.android
 //import com.google.firebase.messaging.FirebaseMessagingService
 
 
-class AppFirebaseMessagingService{
+class AppFirebaseMessagingService {
 
 //    :
 //} FirebaseMessagingService() {

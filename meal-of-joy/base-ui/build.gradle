@@ -1,0 +1,43 @@
+/*
+ *  build.gradle
+ *  MealOfJoy
+ *  <p>
+ *  Created by Dhruv Patel on 16-05-2020.
+ *  Copyright © 2020 MealOfJoy. All rights reserved.
+ */
+
+apply from: "$rootProject.projectDir/android-library.gradle"
+
+dependencies {
+
+    api "androidx.preference:preference:1.1.1"
+
+    api "com.google.android.material:material:1.2.0-alpha06"
+    api 'androidx.appcompat:appcompat:1.1.0'
+
+    api "androidx.cardview:cardview:1.0.0"
+    api "androidx.recyclerview:recyclerview:1.2.0-alpha03"
+
+    api "androidx.constraintlayout:constraintlayout:2.0.0-beta6"
+    api "androidx.fragment:fragment-ktx:1.2.4"
+    api "androidx.fragment:fragment:1.2.4"
+
+    api "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+    api "androidx.navigation:navigation-ui-ktx:$navigation_version"
+    api "com.phelat:navigationresult:1.0.0-beta01"
+
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinInfo.kotlin_version"
+    api "org.jetbrains.kotlin:kotlin-stdlib:$kotlinInfo.kotlin_version"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.3"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.3"
+
+    api 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    api 'androidx.lifecycle:lifecycle-runtime:2.3.0-alpha02'
+
+    api 'com.facebook.shimmer:shimmer:0.5.0'
+
+    api "android.arch.lifecycle:common-java8:1.1.1"
+
+    api "com.github.Zhuinden:event-emitter:1.1.0"
+
+}
