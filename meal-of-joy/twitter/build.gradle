@@ -13,11 +13,7 @@ dependencies {
     implementation project(':models') // models
     implementation project(':network') // networking
     implementation project(':core') // DI
+    implementation project(':base-ui')
+    implementation project(':analytics')
 
-    // implementation 'com.google.code.gson:gson:2.8.6'
-    implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:$networkInfo.kotlinxSerialization"
-    implementation "androidx.annotation:annotation:1.1.0"
-
-    implementation "com.squareup.retrofit2:retrofit:$networkInfo.retrofit"
-    implementation "com.squareup.okhttp3:okhttp:$networkInfo.okhttp"
 }

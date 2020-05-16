@@ -11,7 +11,7 @@ package com.mealofjoy.android.architecture
 import android.content.Context
 import androidx.annotation.StringRes
 
-data class SEError(
+data class MJError(
     val exception: Throwable? = null,
     val titleString: String? = null,
     val messageString: String? = null,
@@ -44,7 +44,7 @@ data class SEError(
     }
 }
 
-data class SELoading(
+data class MJLoading(
     val loading: Boolean = false,
     val message: String = "Loading..."
 ) {

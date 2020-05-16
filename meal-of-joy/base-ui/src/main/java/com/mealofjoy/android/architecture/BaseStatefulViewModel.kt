@@ -51,14 +51,14 @@ abstract class BaseStatefulViewModel<S : ViewState, E : ViewStateEvent, X : View
         exception: Throwable? = null,
         title: String?,
         message: String?
-    ): SEError = SEError(exception = exception, titleString = title, messageString = message)
+    ): MJError = MJError(exception = exception, titleString = title, messageString = message)
 
     protected fun generateError(
         exception: Throwable?,
         @StringRes titleResId: Int?,
         @StringRes messageResId: Int?
-    ): SEError =
-        SEError(exception = exception, titleResId = titleResId, messageResId = messageResId)
+    ): MJError =
+        MJError(exception = exception, titleResId = titleResId, messageResId = messageResId)
 
     abstract fun informOfLoading(message: String)
 
@@ -81,8 +81,8 @@ interface ViewModelContract<E : ViewStateEvent> {
 
 
 interface ViewState {
-    val loading: SELoading
-    val error: SEError
+    val loading: MJLoading
+    val error: MJError
 }
 
 open class ViewStateEffect

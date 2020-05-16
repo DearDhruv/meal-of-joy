@@ -29,7 +29,7 @@ abstract class StateDrivenLazyFragment<S : ViewState, E : ViewStateEvent, X : Vi
 
     abstract fun renderViewState(viewState: S)
     abstract fun renderViewEffect(effect: X)
-    abstract fun handleLoading(loader: SELoading)
+    abstract fun handleLoading(loader: MJLoading)
 
     open suspend fun whenStarted() = Unit
     open suspend fun whenResumed() = Unit
@@ -46,7 +46,7 @@ abstract class StateDrivenLazyFragment<S : ViewState, E : ViewStateEvent, X : Vi
         viewModel?.effects?.observe(viewLifecycleOwner, viewEffectsObserver)
     }
 
-    protected open fun handleError(error: SEError) {
+    protected open fun handleError(error: MJError) {
         if (error.hasErrors()) {
             context?.let {
                 toast(error.message(it))

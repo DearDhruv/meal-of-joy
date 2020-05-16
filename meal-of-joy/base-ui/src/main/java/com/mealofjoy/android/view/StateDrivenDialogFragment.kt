@@ -30,7 +30,7 @@ abstract class StateDrivenDialogFragment<T : ViewState, E : ViewStateEvent, X : 
 
     abstract fun renderViewState(viewState: T)
     abstract fun renderViewEffect(effect: X)
-    abstract fun handleLoading(loader: SELoading)
+    abstract fun handleLoading(loader: MJLoading)
 
     open suspend fun whenStarted() = Unit
     open suspend fun whenResumed() = Unit
@@ -75,7 +75,7 @@ abstract class StateDrivenDialogFragment<T : ViewState, E : ViewStateEvent, X : 
         renderViewEffect(it)
     }
 
-    protected open fun handleError(error: SEError) {
+    protected open fun handleError(error: MJError) {
         if (error.hasErrors()) {
             context?.let {
                 toast(error.message(it))

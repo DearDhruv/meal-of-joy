@@ -35,9 +35,9 @@ abstract class StateDrivenActivity<T : ViewState, E : ViewStateEvent, X : ViewSt
 
     abstract fun renderViewState(viewState: T)
     abstract fun renderViewEffect(effect: X)
-    abstract fun handleLoading(loader: SELoading)
+    abstract fun handleLoading(loader: MJLoading)
 
-    protected open fun handleError(error: SEError) {
+    protected open fun handleError(error: MJError) {
         if (error.hasErrors()) {
             toast(error.message(this))
         }

@@ -81,6 +81,9 @@ dependencies {
     implementation project(':core')
     implementation project(':base-ui')
     implementation project(':analytics')
+    implementation project(':models')
+    implementation project(':network')
+    implementation project(':twitter')
 
 }
 
