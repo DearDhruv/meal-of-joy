@@ -30,3 +30,5 @@ networkInfo.retrofit = "2.7.0"
 networkInfo.okhttp = "4.2.2"
 networkInfo.kotlinxSerialization = "0.20.0"
 ext.networkInfo = networkInfo
+
+ext.navigation_version = "2.2.2"
