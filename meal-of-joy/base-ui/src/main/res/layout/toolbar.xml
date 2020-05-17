@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~  toolbar.xml
+  ~  MealOfJoy
+  ~  <p>
+  ~  Created by Dhruv Patel on 17-05-2020.
+  ~  Copyright © 2020 MealOfJoy. All rights reserved.
+  -->
+
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/actionBarSize"
+    android:background="@color/white"
+    app:layout_collapseMode="pin">
+
+</androidx.appcompat.widget.Toolbar>

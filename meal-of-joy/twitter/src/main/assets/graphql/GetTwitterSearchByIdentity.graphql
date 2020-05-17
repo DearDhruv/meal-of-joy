@@ -1,0 +1,22 @@
+query ($identifier: String!, $identity: String!, $limit: Int!) {
+    twitter {
+        user(identifier: $identifier, identity: $identity) {
+            user {
+                created_at
+                description
+                id
+                screen_name
+                name
+                profile_image_url
+                url
+                tweets_count
+                followers_count
+                tweets(limit: $limit) {
+                    id
+                    created_at
+                    text
+                }
+            }
+        }
+    }
+}
