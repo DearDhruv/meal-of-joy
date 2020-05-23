@@ -32,9 +32,9 @@ class TwitterSearchNetworkRepositoryImpl(
                 runBlocking(coroutineContext) {
                     webService.getTwitterSearchAsync(
                         QueryContainerBuilder()
-                            .putVariable("identifier", identifier)
-                            .putVariable("identity", identity)
-                            .putVariable("limit", limit)
+//                            .putVariable("identifier", identifier)
+                            .putVariable("q", identity)
+//                            .putVariable("limit", limit)
                     )
                 }
             })

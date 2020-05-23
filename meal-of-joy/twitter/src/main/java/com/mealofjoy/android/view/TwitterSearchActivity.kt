@@ -8,6 +8,7 @@
 
 package com.mealofjoy.android.view
 
+import android.os.Bundle
 import com.mealofjoy.android.architecture.MJLoading
 import com.mealofjoy.android.di.TwitterComponent
 import com.mealofjoy.android.di.component
@@ -27,6 +28,12 @@ class TwitterSearchActivity :
                 twitterSearchUsecase = TwitterSearchUsecase(repository)
             )
         }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        viewModel.process(TwitterSearchViewEvent.Search("deardhruv"))
     }
 
     override fun renderViewState(viewState: TwitterSearchViewState) {

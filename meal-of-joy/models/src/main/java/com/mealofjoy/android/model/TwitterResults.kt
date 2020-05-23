@@ -13,9 +13,9 @@ package com.mealofjoy.android.model
  */
 
 class TwitterSearchResponse :
-    GraphResult<TwitterSearchResult, Twitter>() {
+    GraphResult<TwitterSearchResult, Data>() {
     override fun hasData(): Boolean = data?.twitterSearch != null
-    override fun result(): Twitter? = data?.twitterSearch?.data?.twitter
+    override fun result(): Data? = data?.twitterSearch?.data
 }
 
 data class TwitterSearchResult(val twitterSearch: TwitterSearch)

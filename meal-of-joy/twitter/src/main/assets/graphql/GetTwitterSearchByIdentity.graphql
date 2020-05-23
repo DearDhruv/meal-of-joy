@@ -1,22 +1,20 @@
-query ($identifier: String!, $identity: String!, $limit: Int!) {
+query ($q: String!) {
     twitter {
-        user(identifier: $identifier, identity: $identity) {
+        search(q: $q) {
             user {
                 created_at
                 description
+                followers_count
                 id
-                screen_name
                 name
                 profile_image_url
-                url
+                screen_name
                 tweets_count
-                followers_count
-                tweets(limit: $limit) {
-                    id
-                    created_at
-                    text
-                }
+                url
             }
+            created_at
+            text
+            id
         }
     }
 }

@@ -23,7 +23,7 @@ class TwitterSearchRepositoryImpl(val network: TwitterSearchNetworkRepository) :
         network.twitterSearch("identifier", identity, 20) { result ->
             when (result) {
                 is NetworkResult.Success -> {
-                    result.body.data?.let { cb.invoke(LoadResult(it.twitterSearch)) }
+                    result.body.result()?.let { cb.invoke(LoadResult(it)) }
                 }
                 is NetworkResult.Failure -> {
                     cb.invoke(LoadResult(error = Throwable(result.errorResponse)))
