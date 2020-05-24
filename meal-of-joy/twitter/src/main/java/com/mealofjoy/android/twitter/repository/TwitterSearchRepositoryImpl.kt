@@ -6,7 +6,7 @@
  *  Copyright © 2020 MealOfJoy. All rights reserved.
  */
 
-package com.mealofjoy.android.repository
+package com.mealofjoy.android.twitter.repository
 
 import com.mealofjoy.android.architecture.LoadResult
 import com.mealofjoy.android.network.NetworkResult
@@ -23,7 +23,9 @@ class TwitterSearchRepositoryImpl(val network: TwitterSearchNetworkRepository) :
         network.twitterSearch("identifier", identity, 20) { result ->
             when (result) {
                 is NetworkResult.Success -> {
-                    result.body.result()?.let { cb.invoke(LoadResult(it)) }
+                    if (result.body.hasData()) {
+                        result.body.result()?.let { cb.invoke(LoadResult(it)) }
+                    }
                 }
                 is NetworkResult.Failure -> {
                     cb.invoke(LoadResult(error = Throwable(result.errorResponse)))

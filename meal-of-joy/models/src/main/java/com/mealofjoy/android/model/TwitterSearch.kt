@@ -23,8 +23,7 @@ data class Data(
 
 @Parcelize
 data class Twitter(
-//    val user: User,
-    val search: List<Search>
+    val search: List<Search>?
 ) : Parcelable
 
 @Parcelize
@@ -36,15 +35,15 @@ data class User(
     val name: String?,
     val profile_image_url: String?,
     val screen_name: String?,
-//    val tweets: List<Search>,
-    val tweets_count: Int,
-    val url: String
+    val tweets_count: Int?,
+    val url: String?
 ) : Parcelable
 
 @Parcelize
 data class Search(
-    val user: User,
     val created_at: String?,
     val id: String?,
-    val text: String
+    val retweet_count: Int?,
+    val text: String?,
+    val user: User?
 ) : Parcelable

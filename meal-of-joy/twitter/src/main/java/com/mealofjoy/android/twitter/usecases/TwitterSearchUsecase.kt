@@ -6,11 +6,11 @@
  *  Copyright © 2020 MealOfJoy. All rights reserved.
  */
 
-package com.mealofjoy.android.usecases
+package com.mealofjoy.android.twitter.usecases
 
 import com.mealofjoy.android.architecture.LoadResult
 import com.mealofjoy.android.architecture.ParameterUsecaseWithCallback
-import com.mealofjoy.android.repository.TwitterSearchRepository
+import com.mealofjoy.android.twitter.repository.TwitterSearchRepository
 
 class TwitterSearchUsecase(
     private val repository: TwitterSearchRepository

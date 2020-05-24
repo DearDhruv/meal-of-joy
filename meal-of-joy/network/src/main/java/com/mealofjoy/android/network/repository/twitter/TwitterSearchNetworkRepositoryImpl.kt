@@ -13,7 +13,10 @@ import com.mealofjoy.android.network.NetworkResult
 import com.mealofjoy.android.network.graphql.model.request.QueryContainerBuilder
 import com.mealofjoy.android.network.repository.RequestResolver
 import com.mealofjoy.android.network.services.TwitterService
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 class TwitterSearchNetworkRepositoryImpl(
     private val webService: TwitterService
@@ -30,6 +33,7 @@ class TwitterSearchNetworkRepositoryImpl(
         launch {
             cb.invoke(handleResponse {
                 runBlocking(coroutineContext) {
+                    // currently query is not using the other stuff
                     webService.getTwitterSearchAsync(
                         QueryContainerBuilder()
 //                            .putVariable("identifier", identifier)
@@ -40,6 +44,5 @@ class TwitterSearchNetworkRepositoryImpl(
             })
         }
     }
-
 
 }

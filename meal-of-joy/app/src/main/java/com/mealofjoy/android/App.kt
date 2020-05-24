@@ -11,7 +11,7 @@ package com.mealofjoy.android
 import android.app.Application
 import com.mealofjoy.android.analytics.di.AnalyticsComponentImpl
 import com.mealofjoy.android.di.ComponentRouter
-import com.mealofjoy.android.di.TwitterComponentImpl
+import com.mealofjoy.android.twitter.di.TwitterComponentImpl
 import com.mealofjoy.android.di.component
 
 class App : Application() {
@@ -26,7 +26,9 @@ class App : Application() {
         ComponentRouter.init(this) {
             // analytics component
             inject("analytics", AnalyticsComponentImpl("core".component()))
-            inject("twitter", TwitterComponentImpl("core".component()))
+            inject("twitter",
+                TwitterComponentImpl("core".component())
+            )
         }
 
 

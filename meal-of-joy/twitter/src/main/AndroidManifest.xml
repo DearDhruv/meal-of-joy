@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mealofjoy.android">
+    package="com.mealofjoy.android.twitter">
 
     <application android:theme="@style/AppTheme">
 

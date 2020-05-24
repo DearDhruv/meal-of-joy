@@ -15,6 +15,7 @@ query ($q: String!) {
             created_at
             text
             id
+            retweet_count
         }
     }
 }

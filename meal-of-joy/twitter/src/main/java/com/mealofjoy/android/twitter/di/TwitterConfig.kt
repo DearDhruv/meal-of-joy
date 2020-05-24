@@ -6,8 +6,10 @@
  *  Copyright © 2020 MealOfJoy. All rights reserved.
  */
 
-package com.mealofjoy.android.di
+package com.mealofjoy.android.twitter.di
 
+import com.mealofjoy.android.di.Component
+import com.mealofjoy.android.di.CoreComponent
 import com.mealofjoy.android.environmentDimensionNetworkComponent
 import com.mealofjoy.android.network.di.NetworkComponent
 import com.mealofjoy.android.network.repository.twitter.TwitterSearchNetworkRepository
@@ -30,8 +32,11 @@ class TwitterNetworkComponentImpl(environment: NetworkComponent) : TwitterNetwor
         TwitterSearchNetworkRepositoryImpl(retrofit.create(TwitterService::class.java))
 }
 
-class TwitterComponentImpl(coreComponent: CoreComponent) : TwitterComponent {
+class TwitterComponentImpl(coreComponent: CoreComponent) :
+    TwitterComponent {
     override val network: TwitterNetworkComponent =
-        TwitterNetworkComponentImpl(coreComponent.app.environmentDimensionNetworkComponent())
+        TwitterNetworkComponentImpl(
+            coreComponent.app.environmentDimensionNetworkComponent()
+        )
 
 }

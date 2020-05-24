@@ -15,8 +15,11 @@ import androidx.lifecycle.lifecycleScope
 import com.mealofjoy.android.architecture.*
 import com.mealofjoy.android.extensions.toast
 
-abstract class StateDrivenActivity<T : ViewState, E : ViewStateEvent, X : ViewStateEffect, V : BaseStatefulViewModel<T, E, X>> :
-    AppCompatActivity() {
+abstract class StateDrivenActivity<
+        S : ViewState,
+        E : ViewStateEvent,
+        X : ViewStateEffect,
+        V : BaseStatefulViewModel<S, E, X>> : AppCompatActivity() {
 
     abstract val viewModel: V
 
@@ -33,7 +36,7 @@ abstract class StateDrivenActivity<T : ViewState, E : ViewStateEvent, X : ViewSt
     protected open fun whenStarted() = Unit
     protected open fun whenResumed() = Unit
 
-    abstract fun renderViewState(viewState: T)
+    abstract fun renderViewState(viewState: S)
     abstract fun renderViewEffect(effect: X)
     abstract fun handleLoading(loader: MJLoading)
 
@@ -43,7 +46,7 @@ abstract class StateDrivenActivity<T : ViewState, E : ViewStateEvent, X : ViewSt
         }
     }
 
-    private val viewStateObserver = Observer<T> { renderViewState(it) }
+    private val viewStateObserver = Observer<S> { renderViewState(it) }
 
     private val viewEffectsObserver = Observer<X> { renderViewEffect(it) }
 }

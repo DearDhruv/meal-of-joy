@@ -6,7 +6,7 @@
  *  Copyright © 2020 MealOfJoy. All rights reserved.
  */
 
-package com.mealofjoy.android.repository
+package com.mealofjoy.android.twitter.repository
 
 import com.mealofjoy.android.architecture.LoadResult
 

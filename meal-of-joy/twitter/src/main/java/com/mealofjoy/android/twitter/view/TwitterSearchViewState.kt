@@ -6,15 +6,15 @@
  *  Copyright © 2020 MealOfJoy. All rights reserved.
  */
 
-package com.mealofjoy.android.view
+package com.mealofjoy.android.twitter.view
 
 import com.mealofjoy.android.architecture.*
-import com.mealofjoy.android.model.TwitterSearch
+import com.mealofjoy.android.model.Data
 
 data class TwitterSearchViewState(
     override val loading: MJLoading = MJLoading(),
     override val error: MJError = MJError(),
-    val twitterSearch: TwitterSearch? = null
+    val data: Data? = null
 ) : ViewState
 
 // ui model - to avoid unneeded conditional check on view for ui

@@ -6,13 +6,13 @@
  *  Copyright © 2020 MealOfJoy. All rights reserved.
  */
 
-package com.mealofjoy.android.view
+package com.mealofjoy.android.twitter.view
 
 import com.mealofjoy.android.architecture.BaseStatefulViewModel
 import com.mealofjoy.android.architecture.MJError
 import com.mealofjoy.android.architecture.MJLoading
-import com.mealofjoy.android.model.TwitterSearch
-import com.mealofjoy.android.usecases.TwitterSearchUsecase
+import com.mealofjoy.android.model.Data
+import com.mealofjoy.android.twitter.usecases.TwitterSearchUsecase
 
 class TwitterSearchViewModel private constructor(
     private val twitterSearchUsecase: TwitterSearchUsecase
@@ -49,7 +49,7 @@ class TwitterSearchViewModel private constructor(
                         copy(
                             loading = MJLoading(),
                             error = MJError(),
-                            twitterSearch = load.result as TwitterSearch
+                            data = load.result as Data
                         )
                     }
                 }
@@ -61,7 +61,9 @@ class TwitterSearchViewModel private constructor(
         fun create(
             twitterSearchUsecase: TwitterSearchUsecase
         ): TwitterSearchViewModel {
-            return TwitterSearchViewModel(twitterSearchUsecase)
+            return TwitterSearchViewModel(
+                twitterSearchUsecase
+            )
         }
     }
 
