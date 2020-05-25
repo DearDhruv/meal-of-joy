@@ -1,0 +1,19 @@
+/*
+ *  build.gradle
+ *  MealOfJoy
+ *  <p>
+ *  Created by Dhruv Patel on 16-05-2020.
+ *  Copyright © 2020 MealOfJoy. All rights reserved.
+ */
+
+apply from: "$rootProject.projectDir/android-library.gradle"
+
+dependencies {
+
+    implementation project(':models') // models
+    implementation project(':network') // networking
+    implementation project(':core') // DI
+    implementation project(':base-ui')
+    implementation project(':analytics')
+
+}

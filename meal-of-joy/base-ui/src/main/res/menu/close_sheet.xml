@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~  close_sheet.xml
+  ~  MealOfJoy
+  ~  <p>
+  ~  Created by Dhruv Patel on 17-05-2020.
+  ~  Copyright © 2020 MealOfJoy. All rights reserved.
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/close"
+        android:icon="@drawable/ic_close"
+        android:title="close"
+        app:showAsAction="always"
+
+        />
+</menu>

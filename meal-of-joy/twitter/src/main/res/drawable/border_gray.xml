@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~  border_gray.xml
+  ~  MealOfJoy
+  ~  <p>
+  ~  Created by Dhruv Patel 26-05-2020
+  ~  Copyright © 2020 MealOfJoy. All rights reserved.
+  -->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners android:radius="@dimen/margin_4dp" />
+    <stroke
+        android:width="1dp"
+        android:color="@color/gray" />
+</shape>

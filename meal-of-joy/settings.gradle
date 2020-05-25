@@ -1,0 +1,8 @@
+include ':base-ui'
+include ':twitter'
+include ':models'
+include ':network'
+include ':analytics'
+include ':core'
+include ':app'
+rootProject.name = "Meal of Joy"

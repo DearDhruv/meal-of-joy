@@ -1,0 +1,21 @@
+query ($q: String!, $count: Int!) {
+    twitter {
+        search(q: $q, count: $count) {
+            user {
+                created_at
+                description
+                followers_count
+                id
+                name
+                profile_image_url
+                screen_name
+                tweets_count
+                url
+            }
+            created_at
+            text
+            id
+            retweet_count
+        }
+    }
+}

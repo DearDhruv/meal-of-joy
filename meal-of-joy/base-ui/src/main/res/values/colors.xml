@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~  colors.xml
+  ~  MealOfJoy
+  ~  <p>
+  ~  Created by Dhruv Patel on 17-05-2020.
+  ~  Copyright © 2020 MealOfJoy. All rights reserved.
+  -->
+
+<resources>
+
+    <color name="colorAccent">#014B7D</color>
+    <color name="colorPrimary">#212121</color>
+    <color name="colorPrimaryLight">#484848</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorSecondary">#616161</color>
+    <color name="colorSecondaryLight">#8e8e8e</color>
+    <color name="colorSecondaryDark">#373737</color>
+    <color name="colorPrimaryText">#ffffff</color>
+    <color name="colorSecondaryText">#ffffff</color>
+
+    <color name="background">#ededed</color>
+    <color name="black">#000000</color>
+    <color name="blackOverlay">#80000000</color>
+    <color name="darkGray">#A9A9A9</color>
+    <color name="darkGreen">#35a744</color>
+    <color name="divider">#ededed</color>
+    <color name="gray">#c3c3c3</color>
+    <color name="green">#3bb54b</color>
+    <color name="hyperlink">#014B7D</color>
+    <color name="lightGray">#F0F0F0</color>
+    <color name="offWhite">#f2f8f8</color>
+    <color name="red">#fd4343</color>
+    <color name="teal">#36bc9d</color>
+    <color name="text_title">@color/black</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="unselectedGray">#A8A8AC</color>
+    <color name="white">#FFFFFF</color>
+    <color name="whiteOverlay">#80ffffff</color>
+    <color name="yellow">#EEC20E</color>
+
+</resources>
