@@ -11,6 +11,7 @@ package com.mealofjoy.android.di
 import coil.Coil
 import coil.ImageLoader
 import coil.decode.GifDecoder
+import coil.request.CachePolicy
 import coil.util.CoilUtils
 import okhttp3.OkHttpClient
 
@@ -28,6 +29,8 @@ class SessionComponentImpl(private val coreComponent: CoreComponent) : SessionCo
                     .cache(CoilUtils.createDefaultCache(coreComponent.app))
                     .build()
             }
+            .networkCachePolicy(CachePolicy.ENABLED)
+            .diskCachePolicy(CachePolicy.ENABLED)
             .componentRegistry() {
                 add(GifDecoder())
             }

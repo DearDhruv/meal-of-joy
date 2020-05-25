@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.api.load
+import coil.transform.CircleCropTransformation
 import com.mealofjoy.android.extensions.toRelativeDate
 import com.mealofjoy.android.model.TwitterSearch.Search
 import com.mealofjoy.android.twitter.R
@@ -48,7 +49,14 @@ class SearchVH private constructor(itemView: View) : RecyclerView.ViewHolder(ite
         set(value) {
             field = value
             value?.let { search ->
-                itemView.avatar.load(search.user?.profile_image_url)
+
+                val profileImageUrl = search.user?.profile_image_url?.replace("_normal", "")
+                itemView.avatar.load(profileImageUrl) {
+                    crossfade(true)
+                    crossfade(300)
+                    placeholder(R.drawable.ic_twitter_logo_whiteonblue)
+                    transformations(CircleCropTransformation())
+                }
                 itemView.fullname.text = search.user?.name
                 itemView.username.text = search.user?.screen_name
                 itemView.time_stamp.text = search.created_at?.toRelativeDate()

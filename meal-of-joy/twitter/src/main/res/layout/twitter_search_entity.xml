@@ -13,12 +13,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_8dp"
+    android:background="@drawable/border_gray"
     android:padding="8dp">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/avatar"
         android:layout_width="@dimen/margin_88dp"
         android:layout_height="@dimen/margin_88dp"
+        android:layout_margin="@dimen/margin_4dp"
         android:scaleType="centerInside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -43,8 +46,8 @@
         android:layout_margin="@dimen/margin_4dp"
         android:textColor="@color/darkGray"
         android:textSize="@dimen/textL"
-        app:layout_constraintStart_toEndOf="@+id/fullname"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/avatar"
+        app:layout_constraintTop_toBottomOf="@id/fullname"
         tools:text="@tools:sample/first_names" />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -53,9 +56,10 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_4dp"
         android:textColor="@color/darkGray"
-        android:textSize="@dimen/textL"
+        android:textSize="@dimen/textR"
+        app:layout_constraintBottom_toBottomOf="@id/username"
         app:layout_constraintStart_toEndOf="@+id/username"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@id/username"
         tools:text="@tools:sample/date/hhmmss" />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -64,19 +68,10 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_4dp"
         android:textColor="@color/black"
-        android:textSize="@dimen/textL"
+        android:textSize="@dimen/textR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/avatar"
-        app:layout_constraintTop_toBottomOf="@id/fullname"
+        app:layout_constraintTop_toBottomOf="@id/username"
         tools:text="@tools:sample/lorem/random" />
-
-    <View
-        android:layout_width="0dp"
-        android:layout_height="0.5dp"
-        android:layout_marginTop="@dimen/margin_8dp"
-        android:background="@color/gray"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tweet" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
