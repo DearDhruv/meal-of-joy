@@ -10,6 +10,8 @@ package com.mealofjoy.android.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import com.mealofjoy.android.architecture.*
@@ -49,5 +51,27 @@ abstract class StateDrivenActivity<
     private val viewStateObserver = Observer<S> { renderViewState(it) }
 
     private val viewEffectsObserver = Observer<X> { renderViewEffect(it) }
+
+    private lateinit var progressDialogFragment: ProgressDialogFragment
+
+    // this can be state driven as well
+    fun showProgressDialog(message: String) {
+        val tag = "progress"
+        val ft: FragmentTransaction = supportFragmentManager.beginTransaction()
+        val prev: Fragment? = supportFragmentManager.findFragmentByTag(tag)
+        if (prev != null) {
+            ft.remove(prev)
+        }
+        ft.addToBackStack(null)
+
+        progressDialogFragment = ProgressDialogFragment.newInstance(message)
+        progressDialogFragment.show(ft, tag)
+    }
+
+    fun hideProgressDialog() {
+        if (::progressDialogFragment.isInitialized) {
+            progressDialogFragment.dismiss()
+        }
+    }
 }
 

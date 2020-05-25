@@ -85,10 +85,10 @@ class TwitterSearchActivity :
     }
 
     override fun handleLoading(loader: MJLoading) {
-//        if (loader.isLoading()) {
-//            progressDialog.show()
-//        } else {
-//            progressDialog.dismiss()
-//        }
+        if (loader.isLoading()) {
+            showProgressDialog(loader.message)
+        } else {
+            hideProgressDialog()
+        }
     }
 }

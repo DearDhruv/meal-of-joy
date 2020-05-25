@@ -62,6 +62,9 @@ class TwitterSearchViewModel private constructor(
     }
 
     private fun searchTwitter(term: String) {
+
+        informOfLoading("Searching...")
+
         twitterSearchUsecase.execute(term, 100) { load ->
             when {
                 load.error != null -> informOfError(
