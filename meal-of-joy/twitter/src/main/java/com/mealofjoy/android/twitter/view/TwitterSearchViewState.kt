@@ -9,19 +9,13 @@
 package com.mealofjoy.android.twitter.view
 
 import com.mealofjoy.android.architecture.*
-import com.mealofjoy.android.model.Data
+import com.mealofjoy.android.model.TwitterSearch
 
 data class TwitterSearchViewState(
     override val loading: MJLoading = MJLoading(),
     override val error: MJError = MJError(),
-    val data: Data? = null
+    val twitter: TwitterSearch.Twitter? = null
 ) : ViewState
-
-// ui model - to avoid unneeded conditional check on view for ui
-//data class TwitterSearch(
-//    val id: Int
-//) {
-//}
 
 sealed class TwitterSearchViewEvent : ViewStateEvent() {
     data class Search(val term: String) : TwitterSearchViewEvent()

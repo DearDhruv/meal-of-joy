@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.api.load
 import com.mealofjoy.android.extensions.toRelativeDate
-import com.mealofjoy.android.model.Search
+import com.mealofjoy.android.model.TwitterSearch.Search
 import com.mealofjoy.android.twitter.R
 import kotlinx.android.synthetic.main.twitter_search_entity.view.*
 

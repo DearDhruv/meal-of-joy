@@ -31,17 +31,18 @@ class TwitterSearchNetworkRepositoryImpl(
         cb: (NetworkResult<TwitterSearchResponse>) -> Unit
     ) {
         launch {
-            cb.invoke(handleResponse {
-                runBlocking(coroutineContext) {
-                    // currently query is not using the other stuff
-                    webService.getTwitterSearchAsync(
-                        QueryContainerBuilder()
+            cb.invoke(
+                handleResponse {
+                    runBlocking(coroutineContext) {
+                        webService.getTwitterSearchAsync(
+                            QueryContainerBuilder()
+                                .putVariable("q", identity)
 //                            .putVariable("identifier", identifier)
-                            .putVariable("q", identity)
 //                            .putVariable("limit", limit)
-                    )
+                        )
+                    }
                 }
-            })
+            )
         }
     }
 

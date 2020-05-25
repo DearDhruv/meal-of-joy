@@ -14,8 +14,8 @@ import okhttp3.ResponseBody
 import retrofit2.Converter
 
 open class GraphResponseConverter<T> constructor(
-    protected val adapter: TypeAdapter<T>,
-    protected val gson: Gson
+    private val adapter: TypeAdapter<T>,
+    private val gson: Gson
 ) : Converter<ResponseBody, T> {
     override fun convert(value: ResponseBody): T? {
         var ret: T? = null

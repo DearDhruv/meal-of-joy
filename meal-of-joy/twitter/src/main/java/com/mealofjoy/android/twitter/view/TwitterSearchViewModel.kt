@@ -11,7 +11,7 @@ package com.mealofjoy.android.twitter.view
 import com.mealofjoy.android.architecture.BaseStatefulViewModel
 import com.mealofjoy.android.architecture.MJError
 import com.mealofjoy.android.architecture.MJLoading
-import com.mealofjoy.android.model.Data
+import com.mealofjoy.android.model.TwitterSearch
 import com.mealofjoy.android.twitter.usecases.TwitterSearchUsecase
 
 class TwitterSearchViewModel private constructor(
@@ -49,7 +49,7 @@ class TwitterSearchViewModel private constructor(
                         copy(
                             loading = MJLoading(),
                             error = MJError(),
-                            data = load.result as Data
+                            twitter = load.result as TwitterSearch.Twitter
                         )
                     }
                 }

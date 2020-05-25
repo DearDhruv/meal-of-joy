@@ -13,12 +13,10 @@ package com.mealofjoy.android.model
  */
 
 class TwitterSearchResponse :
-    GraphResult<TwitterSearchResult, Data>() {
-    override fun hasData(): Boolean = data?.twitterSearch?.data != null
-    override fun result(): Data? = data?.twitterSearch?.data
+    GraphResult<TwitterSearch.Data, TwitterSearch.Twitter>() {
+    override fun hasData(): Boolean = data != null
+    override fun result(): TwitterSearch.Twitter? = data?.twitter
 }
-
-data class TwitterSearchResult(val twitterSearch: TwitterSearch)
 
 // endregion
 

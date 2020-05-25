@@ -14,6 +14,7 @@ import android.widget.TextView.OnEditorActionListener
 import com.mealofjoy.android.architecture.MJLoading
 import com.mealofjoy.android.di.component
 import com.mealofjoy.android.extensions.getViewModel
+import com.mealofjoy.android.extensions.hideKeyboard
 import com.mealofjoy.android.extensions.toast
 import com.mealofjoy.android.twitter.R
 import com.mealofjoy.android.twitter.di.TwitterComponent
@@ -60,32 +61,24 @@ class TwitterSearchActivity :
 
         search_input.setOnEditorActionListener(OnEditorActionListener { v, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                viewModel.process(
-                    TwitterSearchViewEvent.Search(
-                        search_input.text.toString()
-                    )
-                )
+                viewModel.process(TwitterSearchViewEvent.Search(search_input.text.toString()))
+                v.hideKeyboard()
                 return@OnEditorActionListener true
             }
             false
         })
-        viewModel.process(
-            TwitterSearchViewEvent.Search(
-                "twitter"
-            )
-        )
+        viewModel.process(TwitterSearchViewEvent.Search("deardhruv"))
     }
 
     override fun renderViewState(viewState: TwitterSearchViewState) {
         handleLoading(viewState.loading)
         handleError(viewState.error)
 
-        if (viewState.data == null) {
+        if (viewState.twitter?.search == null) {
             toast("Failed to search the query")
             return
         }
-        toast("Dude! you are awesome!")
-        twitterSearchAdapter.submitList(viewState.data.twitter.search)
+        twitterSearchAdapter.submitList(viewState.twitter.search)
 
     }
 

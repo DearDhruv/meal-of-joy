@@ -21,7 +21,7 @@ interface TwitterService {
     @GraphQuery("GetTwitterSearchByIdentity")
     suspend fun getTwitterSearchAsync(@Body query: QueryContainerBuilder): Response<TwitterSearchResponse>
 
-    @POST("graphql")
-    @GraphQuery("GetTweetById")
-    suspend fun getTweetByIdAsync(@Body query: QueryContainerBuilder): Response<TwitterSearchResponse>
+//    @POST("graphql")
+//    @GraphQuery("GetTweetById")
+//    suspend fun getTweetByIdAsync(@Body query: QueryContainerBuilder): Response<TwitterSearchResponse>
 }

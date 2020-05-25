@@ -9,6 +9,7 @@
 package com.mealofjoy.android.network.graphql.converter
 
 import android.content.Context
+import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import com.mealofjoy.android.network.graphql.annotation.processor.GraphQueryProcessor
@@ -19,10 +20,12 @@ import retrofit2.Converter
 import retrofit2.Retrofit
 import java.lang.reflect.Type
 
-class GraphQLConverter private constructor(context: Context) : Converter.Factory() {
+open class GraphQLConverter private constructor(
+    context: Context,
+    val gson: Gson = baseGson().create()
+) : Converter.Factory() {
 
     private val graphProcessor = GraphQueryProcessor(context)
-    private val gson = GsonBuilder().enableComplexMapKeySerialization().setLenient().create()
 
     /**
      * Response body converter delegates logic processing to a child class that handles
@@ -55,6 +58,8 @@ class GraphQLConverter private constructor(context: Context) : Converter.Factory
 
     companion object {
         val MEDIA_TYPE = "application/json; charset=UTF-8".toMediaType()
+
+        fun baseGson() = GsonBuilder().enableComplexMapKeySerialization().setLenient()
 
         @JvmStatic
         fun create(context: Context): GraphQLConverter {
