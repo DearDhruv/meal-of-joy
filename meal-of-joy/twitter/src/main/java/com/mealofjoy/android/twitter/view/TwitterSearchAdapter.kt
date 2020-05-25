@@ -49,8 +49,8 @@ class SearchVH private constructor(itemView: View) : RecyclerView.ViewHolder(ite
             field = value
             value?.let { search ->
                 itemView.avatar.load(search.user?.profile_image_url)
-                itemView.fullname.text = search.user?.screen_name
-                itemView.username.text = search.user?.name
+                itemView.fullname.text = search.user?.name
+                itemView.username.text = search.user?.screen_name
                 itemView.time_stamp.text = search.created_at?.toRelativeDate()
                 itemView.tweet.text = search.text
 

@@ -8,13 +8,32 @@
 
 package com.mealofjoy.android.di
 
+import coil.Coil
+import coil.ImageLoader
+import coil.decode.GifDecoder
+import coil.util.CoilUtils
+import okhttp3.OkHttpClient
+
 interface SessionComponent : Component {
 }
 
-class SessionComponentImpl(private val coreComponent: CoreComponent) :
-    SessionComponent {
+class SessionComponentImpl(private val coreComponent: CoreComponent) : SessionComponent {
+
     init {
-        // init config for image loader, etc.
+        val imageLoader = ImageLoader.Builder(coreComponent.app)
+            .crossfade(true)
+            .allowHardware(false)
+            .okHttpClient {
+                OkHttpClient.Builder()
+                    .cache(CoilUtils.createDefaultCache(coreComponent.app))
+                    .build()
+            }
+            .componentRegistry() {
+                add(GifDecoder())
+            }
+            .build()
+
+        Coil.setImageLoader(imageLoader)
     }
 
 }
