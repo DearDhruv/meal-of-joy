@@ -25,9 +25,8 @@ class TwitterSearchNetworkRepositoryImpl(
     CoroutineScope by CoroutineScope(Dispatchers.IO) {
 
     override fun twitterSearch(
-        identifier: String,
-        identity: String,
-        limit: Int,
+        query: String,
+        count: Int,
         cb: (NetworkResult<TwitterSearchResponse>) -> Unit
     ) {
         launch {
@@ -36,9 +35,8 @@ class TwitterSearchNetworkRepositoryImpl(
                     runBlocking(coroutineContext) {
                         webService.getTwitterSearchAsync(
                             QueryContainerBuilder()
-                                .putVariable("q", identity)
-//                            .putVariable("identifier", identifier)
-//                            .putVariable("limit", limit)
+                                .putVariable("q", query)
+                                .putVariable("count", count)
                         )
                     }
                 }

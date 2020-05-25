@@ -27,8 +27,8 @@ import kotlinx.android.synthetic.main.activity_twitter_search.*
 class TwitterSearchActivity :
     StateDrivenActivity<TwitterSearchViewState, TwitterSearchViewEvent, TwitterSearchViewEffect, TwitterSearchViewModel>() {
 
-    val twiter = "twitter".component<TwitterComponent>()
-    val repository = TwitterSearchRepositoryImpl(twiter.network.twitter)
+    private val twitter = "twitter".component<TwitterComponent>()
+    private val repository = TwitterSearchRepositoryImpl(twitter.network.twitter)
 
     override val viewModel: TwitterSearchViewModel by lazy {
         getViewModel {
@@ -75,7 +75,6 @@ class TwitterSearchActivity :
         handleError(viewState.error)
 
         if (viewState.twitter?.search == null) {
-            toast("Failed to search the query")
             return
         }
         twitterSearchAdapter.submitList(viewState.twitter.search)
@@ -86,5 +85,10 @@ class TwitterSearchActivity :
     }
 
     override fun handleLoading(loader: MJLoading) {
+//        if (loader.isLoading()) {
+//            progressDialog.show()
+//        } else {
+//            progressDialog.dismiss()
+//        }
     }
 }

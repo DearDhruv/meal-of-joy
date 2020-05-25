@@ -13,7 +13,6 @@ import com.mealofjoy.android.network.NetworkResult
 interface TwitterSearchNetworkRepository {
 
     fun twitterSearch(
-        identifier: String,
         identity: String,
         limit: Int,
         cb: ((NetworkResult<TwitterSearchResponse>) -> Unit)

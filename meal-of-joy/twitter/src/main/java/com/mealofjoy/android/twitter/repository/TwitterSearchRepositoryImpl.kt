@@ -15,12 +15,12 @@ import com.mealofjoy.android.network.repository.twitter.TwitterSearchNetworkRepo
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 
-class TwitterSearchRepositoryImpl(val network: TwitterSearchNetworkRepository) :
+class TwitterSearchRepositoryImpl(private val network: TwitterSearchNetworkRepository) :
     TwitterSearchRepository,
     RequestResolver, CoroutineScope by CoroutineScope(Dispatchers.IO) {
 
-    override fun twitterSearch(identity: String, cb: (LoadResult) -> Unit) {
-        network.twitterSearch("identifier", identity, 20) { result ->
+    override fun twitterSearch(query: String?, count: Int, cb: (LoadResult) -> Unit) {
+        network.twitterSearch(query ?: "deardhruv", count.coerceAtMost(100)) { result ->
             when (result) {
                 is NetworkResult.Success -> {
                     if (result.body.hasData()) {

@@ -1,6 +1,6 @@
-query ($q: String!) {
+query ($q: String!, $count: Int!) {
     twitter {
-        search(q: $q) {
+        search(q: $q, count: $count) {
             user {
                 created_at
                 description

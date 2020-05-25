@@ -8,11 +8,14 @@
 
 package com.mealofjoy.android.twitter.view
 
+import androidx.lifecycle.viewModelScope
 import com.mealofjoy.android.architecture.BaseStatefulViewModel
 import com.mealofjoy.android.architecture.MJError
 import com.mealofjoy.android.architecture.MJLoading
 import com.mealofjoy.android.model.TwitterSearch
 import com.mealofjoy.android.twitter.usecases.TwitterSearchUsecase
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class TwitterSearchViewModel private constructor(
     private val twitterSearchUsecase: TwitterSearchUsecase
@@ -23,12 +26,33 @@ class TwitterSearchViewModel private constructor(
     }
 
     override fun informOfLoading(message: String) {
+        viewModelScope.launch(Dispatchers.Main) {
+            setState {
+                copy(loading = MJLoading(loading = true, message = message))
+            }
+        }
     }
 
     override fun informOfError(exception: Throwable?, title: String?, message: String?) {
+        viewModelScope.launch(Dispatchers.Main) {
+            setState {
+                copy(
+                    loading = MJLoading(loading = false),
+                    error = generateError(exception, title, message)
+                )
+            }
+        }
     }
 
     override fun informOfError(exception: Throwable?, titleResId: Int?, messageResId: Int?) {
+        viewModelScope.launch(Dispatchers.Main) {
+            setState {
+                copy(
+                    loading = MJLoading(loading = false),
+                    error = generateError(exception, titleResId, messageResId)
+                )
+            }
+        }
     }
 
     override fun process(event: TwitterSearchViewEvent) {
@@ -38,7 +62,7 @@ class TwitterSearchViewModel private constructor(
     }
 
     private fun searchTwitter(term: String) {
-        twitterSearchUsecase.execute(term) { load ->
+        twitterSearchUsecase.execute(term, 100) { load ->
             when {
                 load.error != null -> informOfError(
                     exception = load.error,

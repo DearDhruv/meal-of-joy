@@ -13,7 +13,8 @@ import com.mealofjoy.android.architecture.LoadResult
 interface TwitterSearchRepository {
 
     fun twitterSearch(
-        identity: String,
+        query: String?,
+        count: Int,
         cb: ((LoadResult) -> Unit) // TwitterSearchResult
     )
 
