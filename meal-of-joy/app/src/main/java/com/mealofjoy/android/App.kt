@@ -11,6 +11,9 @@ package com.mealofjoy.android
 import android.app.Application
 import com.mealofjoy.android.analytics.di.AnalyticsComponentImpl
 import com.mealofjoy.android.di.ComponentRouter
+import com.mealofjoy.android.di.SessionComponentImpl
+import com.mealofjoy.android.di.component
+import com.mealofjoy.android.twitter.di.TwitterComponentImpl
 
 class App : Application() {
 
@@ -22,10 +25,12 @@ class App : Application() {
     private fun createComponentRouter() {
         // initialize component router for DIY DI
         ComponentRouter.init(this) {
+            inject("session", SessionComponentImpl("core".component()))
             // analytics component
-            inject("analytics", AnalyticsComponentImpl(applicationContext))
+            inject("analytics", AnalyticsComponentImpl("core".component()))
+            inject("twitter", TwitterComponentImpl("core".component()))
         }
+
     }
 
-    // todo: create module for notification
 }

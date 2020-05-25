@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~  colors.xml
+  ~  MealOfJoy
+  ~  <p>
+  ~  Created by Dhruv Patel 26-05-2020
+  ~  Copyright © 2020 MealOfJoy. All rights reserved.
+  -->
+
+<resources>
+    <color name="twitterBlue">#1da1f2</color>
+</resources>
