@@ -26,7 +26,7 @@ ext.androidbuild = androidbuild
 
 
 def networkInfo = [:]
-networkInfo.retrofit = "2.7.0"
+networkInfo.retrofit = "2.8.1"
 networkInfo.okhttp = "4.2.2"
 networkInfo.kotlinxSerialization = "0.20.0"
 ext.networkInfo = networkInfo
