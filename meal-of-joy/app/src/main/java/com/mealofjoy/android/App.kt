@@ -9,10 +9,12 @@
 package com.mealofjoy.android
 
 import android.app.Application
+import android.content.Intent
 import com.mealofjoy.android.analytics.di.AnalyticsComponentImpl
 import com.mealofjoy.android.di.ComponentRouter
 import com.mealofjoy.android.di.SessionComponentImpl
 import com.mealofjoy.android.di.component
+import com.mealofjoy.android.network.InternetCheckService
 import com.mealofjoy.android.twitter.di.TwitterComponentImpl
 
 class App : Application() {
@@ -20,6 +22,8 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         createComponentRouter()
+
+        startService(Intent(applicationContext, InternetCheckService::class.java))
     }
 
     private fun createComponentRouter() {

@@ -23,7 +23,7 @@ object Logger {
 
     fun d(Msg: String) = log(Log.DEBUG, TAG, Msg)
 
-    fun d(Tag: String, Msg: String) = log(Log.DEBUG, TAG, Msg)
+    fun d(Tag: String, Msg: String) = log(Log.DEBUG, Tag, Msg)
 
     fun v(Msg: String) = log(Log.VERBOSE, TAG, Msg)
 
