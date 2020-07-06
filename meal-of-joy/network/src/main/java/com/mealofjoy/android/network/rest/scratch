@@ -1,0 +1,11 @@
+/*
+ *  scratch
+ *  MealOfJoy
+ *  <p>
+ *  Created by Dhruv Patel on 02-07-2020.
+ *  Copyright © 2020 MealOfJoy. All rights reserved.
+ */
+
+
+todo: Add support for the rest api
+todo: use this free rest api to test - https://api.ratesapi.io/api/latest?base=INR
