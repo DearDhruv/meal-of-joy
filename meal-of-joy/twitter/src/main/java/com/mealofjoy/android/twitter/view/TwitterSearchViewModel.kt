@@ -58,6 +58,8 @@ class TwitterSearchViewModel private constructor(
     override fun process(event: TwitterSearchViewEvent) {
         when (event) {
             is TwitterSearchViewEvent.Search -> searchTwitter(event.term)
+            is TwitterSearchViewEvent.TweetSelected -> Unit
+            is TwitterSearchViewEvent.ProfileClicked -> Unit
         }
     }
 
@@ -65,7 +67,7 @@ class TwitterSearchViewModel private constructor(
 
         informOfLoading("Searching...")
 
-        twitterSearchUsecase.execute(term, 100) { load ->
+        twitterSearchUsecase.invoke(term, 100) { load ->
             when {
                 load.error != null -> informOfError(
                     exception = load.error,
