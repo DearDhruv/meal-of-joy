@@ -8,6 +8,8 @@
 
 package com.mealofjoy.android.twitter.view
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.inputmethod.EditorInfo
 import android.widget.TextView.OnEditorActionListener
@@ -89,6 +91,12 @@ class TwitterSearchActivity :
             showProgressDialog(loader.message)
         } else {
             hideProgressDialog()
+        }
+    }
+
+    companion object {
+        fun newIntent(caller: Context): Intent {
+            return Intent(caller, TwitterSearchActivity::class.java)
         }
     }
 }
