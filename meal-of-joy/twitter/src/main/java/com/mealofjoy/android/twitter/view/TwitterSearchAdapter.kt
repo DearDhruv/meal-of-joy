@@ -9,6 +9,7 @@
 
 package com.mealofjoy.android.twitter.view
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -46,6 +47,7 @@ class SearchVH private constructor(itemView: View) : RecyclerView.ViewHolder(ite
     var onClick: ((Search) -> Unit)? = null
 
     var entity: Search? = null
+        @SuppressLint("SetTextI18n")
         set(value) {
             field = value
             value?.let { search ->
@@ -58,7 +60,7 @@ class SearchVH private constructor(itemView: View) : RecyclerView.ViewHolder(ite
                     transformations(CircleCropTransformation())
                 }
                 itemView.fullname.text = search.user?.name
-                itemView.username.text = search.user?.screen_name
+                itemView.username.text = "@" + search.user?.screen_name
                 itemView.time_stamp.text = search.created_at?.toRelativeDate()
                 itemView.tweet.text = search.text
 

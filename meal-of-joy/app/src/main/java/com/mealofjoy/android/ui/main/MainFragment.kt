@@ -20,6 +20,8 @@ import com.mealofjoy.android.analytics.DemoAnalyticsImpl
 import com.mealofjoy.android.analytics.di.AnalyticsComponent
 import com.mealofjoy.android.di.component
 import com.mealofjoy.android.extensions.getViewModel
+import com.mealofjoy.android.twitter.view.TwitterSearchActivity
+import kotlinx.android.synthetic.main.main_fragment.*
 
 class MainFragment : Fragment() {
 
@@ -45,7 +47,14 @@ class MainFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+        initViews()
         viewModel?.logAppOpened()
+    }
+
+    private fun initViews() {
+
+        btnGraphQL.setOnClickListener { startActivity(TwitterSearchActivity.newIntent(requireContext())) }
+        btnRest.setOnClickListener { }
     }
 
 }
