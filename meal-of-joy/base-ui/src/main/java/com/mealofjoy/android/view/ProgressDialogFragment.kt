@@ -15,7 +15,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatDialogFragment
-import com.mealofjoy.android.R
+import com.mealofjoy.android.architecture.R
 import kotlinx.android.synthetic.main.progress_dialog_fragment.*
 
 class ProgressDialogFragment private constructor() : AppCompatDialogFragment() {

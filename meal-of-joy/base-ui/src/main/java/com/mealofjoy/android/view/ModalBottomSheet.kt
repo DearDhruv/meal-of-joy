@@ -24,7 +24,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.mealofjoy.android.R
+import com.mealofjoy.android.architecture.R
 import com.mealofjoy.android.extensions.dp
 import com.mealofjoy.android.extensions.maximumHeight
 import kotlinx.android.synthetic.main.dialog_fragment_modal_bottom_sheet.*

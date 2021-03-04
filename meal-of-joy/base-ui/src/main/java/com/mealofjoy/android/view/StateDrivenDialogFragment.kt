@@ -36,8 +36,8 @@ abstract class StateDrivenDialogFragment<T : ViewState, E : ViewStateEvent, X : 
     open suspend fun whenResumed() = Unit
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        containerView = View.inflate(context, layoutResId, null)
-        return AlertDialog.Builder(context!!)
+        containerView = View.inflate(requireContext(), layoutResId, null)
+        return AlertDialog.Builder(requireContext())
             .setView(containerView)
             .create()
     }
