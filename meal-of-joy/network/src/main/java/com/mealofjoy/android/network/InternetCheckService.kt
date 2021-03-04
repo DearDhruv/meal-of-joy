@@ -15,7 +15,6 @@ import android.content.Intent
 import android.net.ConnectivityManager
 import android.net.Network
 import android.os.Binder
-import android.os.Build
 import android.os.IBinder
 import android.widget.Toast
 
@@ -45,27 +44,22 @@ class InternetCheckService : Service() {
     }
 
     fun setInternetCallback() {
-        val cm = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        cm?.let {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                it.registerDefaultNetworkCallback(
-                    // NetworkRequest.Builder().build(),
-                    object : ConnectivityManager.NetworkCallback() {
-                        override fun onAvailable(network: Network) {
-                            QuickTaskIntentService.startActionSearch(
-                                this@InternetCheckService,
-                                "DearDhruv"
-                            )
-                        }
+        val cm = getSystemService(Context.CONNECTIVITY_SERVICE) as? ConnectivityManager
+        cm?.registerDefaultNetworkCallback(
+            object : ConnectivityManager.NetworkCallback() {
+                override fun onAvailable(network: Network) {
+                    QuickTaskIntentService.startActionSearch(
+                        this@InternetCheckService,
+                        "DearDhruv"
+                    )
+                }
 
-                        override fun onLost(network: Network?) {
-                            QuickTaskIntentService.startActionLog(
-                                this@InternetCheckService,
-                                "Internet Lost"
-                            )
-                        }
-                    })
-            }
-        }
+                override fun onLost(network: Network) {
+                    QuickTaskIntentService.startActionLog(
+                        this@InternetCheckService,
+                        "Internet Lost"
+                    )
+                }
+            })
     }
 }

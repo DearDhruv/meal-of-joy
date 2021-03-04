@@ -7,7 +7,7 @@
  */
 
 def kotlinInfo = [:]
-kotlinInfo.kotlin_version = "1.3.72"
+kotlinInfo.kotlin_version = "1.4.31"
 ext.kotlinInfo = kotlinInfo
 
 def appInfo = [:]
@@ -18,17 +18,17 @@ ext.appInfo = appInfo
 
 def androidbuild = [:]
 // Android build stuff
-androidbuild.minSdkVersion = 21
-androidbuild.targetSdkVersion = 29
-androidbuild.compileSdkVersion = 29
+androidbuild.minSdkVersion = 26
+androidbuild.targetSdkVersion = 30
+androidbuild.compileSdkVersion = 30
 androidbuild.testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 ext.androidbuild = androidbuild
 
 
 def networkInfo = [:]
-networkInfo.retrofit = "2.8.1"
+networkInfo.retrofit = "2.9.0"
 networkInfo.okhttp = "4.2.2"
-networkInfo.kotlinxSerialization = "0.20.0"
+networkInfo.kotlinxSerialization = "1.1.0"
 ext.networkInfo = networkInfo
 
-ext.navigation_version = "2.3.0"
+ext.navigation_version = "2.3.3"
