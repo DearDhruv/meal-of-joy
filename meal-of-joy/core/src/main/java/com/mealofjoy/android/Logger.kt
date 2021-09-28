@@ -9,6 +9,7 @@
 package com.mealofjoy.android
 
 import android.util.Log
+import com.mealofjoy.android.di.BuildConfig
 
 object Logger {
     private val TAG by lazy { Logger::class.java.simpleName }

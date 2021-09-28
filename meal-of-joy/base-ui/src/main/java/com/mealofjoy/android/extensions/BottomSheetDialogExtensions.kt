@@ -11,7 +11,7 @@ package com.mealofjoy.android.extensions
 import android.graphics.Rect
 import androidx.appcompat.widget.Toolbar
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.mealofjoy.android.R
+import com.mealofjoy.android.architecture.R
 
 fun BottomSheetDialogFragment.maximumHeight(
     toolbar: Toolbar? = activity?.findViewById(R.id.toolbar),
