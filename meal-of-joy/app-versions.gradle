@@ -7,7 +7,7 @@
  */
 
 def kotlinInfo = [:]
-kotlinInfo.kotlin_version = "1.4.31"
+kotlinInfo.kotlin_version = "1.5.31"
 ext.kotlinInfo = kotlinInfo
 
 def appInfo = [:]
