@@ -26,7 +26,7 @@ private fun gson(): Gson = GsonBuilder()
 fun Application.environmentDimensionNetworkComponent(): NetworkComponent {
     return BaseNetworkComponent(
         networkConfig = NetworkConfig(
-            baseUrl = "https://www.graphqlhub.com" // todo: change this the correct server - this is just to test the network
+            baseUrl = "https://www.deardhruv.com" // todo: change this the correct server - this is just to test the network
         ),
         interceptors = listOf(HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BODY

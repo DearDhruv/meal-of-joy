@@ -17,9 +17,13 @@ import retrofit2.http.POST
 
 interface TwitterService {
 
-    @POST("graphql")
+    @POST("test/deardhruv_profile.json")
     @GraphQuery("GetTwitterSearchByIdentity")
     suspend fun getTwitterSearchAsync(@Body query: QueryContainerBuilder): Response<TwitterSearchResponse>
+
+//    @POST("graphql")
+//    @GraphQuery("GetTwitterSearchByIdentity")
+//    suspend fun getTwitterSearchAsync(@Body query: QueryContainerBuilder): Response<TwitterSearchResponse>
 
 //    @POST("graphql")
 //    @GraphQuery("GetTweetById")
