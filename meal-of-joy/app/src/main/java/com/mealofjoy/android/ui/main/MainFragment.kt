@@ -54,7 +54,7 @@ class MainFragment : Fragment() {
     private fun initViews() {
 
         btnGraphQL.setOnClickListener { startActivity(TwitterSearchActivity.newIntent(requireContext())) }
-        btnRest.setOnClickListener { }
+        btnRest.setOnClickListener { startActivity(TwitterSearchActivity.newIntent(requireContext())) } // todo: update the rest later
     }
 
 }
